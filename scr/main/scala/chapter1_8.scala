@@ -4,7 +4,9 @@
 print("> ")
 val bits = readInt()
 val random = BigInt(bits, scala.util.Random)
-println(random.toString(36))
 
+//println(random.toString(36))
+
+printf("Hier ist deine Zahl: %s.\n", random.toString(36))
 
 //println(BigInt(100, scala.util.Random).toString(36))
