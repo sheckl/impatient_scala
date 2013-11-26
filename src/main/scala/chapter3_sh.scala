@@ -1,25 +1,30 @@
 
 // Exercise 1
 
-val n = 4
-val b = new Array[Int](n)
-
-
-
-// Exercise 2
-
-val a = Array(1, 2, 3, 4, 5)
-
-for (i <- 0 until (a.length,2)) {
-  if (i < a.length -1) {
-    var arraySlice = a.slice(i, i + 2).reverse
-    a(i) = arraySlice(0)
-    a(i + 1) = arraySlice(1)
+def randomArray (n: Int) = {
+  val a = new Array[Int](n)
+  for (i <- 0 until a.length) {
+    a(i) = util.Random.nextInt(n)
   }
   a
 }
 
-println(a.mkString(", "))
+println(randomArray(10).mkString(", "))
+
+// Exercise 2
+
+val b = Array(1, 2, 3, 4, 5)
+
+for (i <- 0 until (b.length,2)) {
+  if (i < b.length - 1) {
+    var arraySlice = b.slice(i, i + 2).reverse
+    b(i) = arraySlice(0)
+    b(i + 1) = arraySlice(1)
+  }
+  b
+}
+
+println(b.mkString(", "))
 
 
 
