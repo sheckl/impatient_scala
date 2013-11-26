@@ -13,8 +13,7 @@ def randomArray(n: Int) = {
 println(randomArray(10).mkString(", "))
 
 // kürzere Variante:
-val randoms = for(i <- 1 until n) yield Random.nextInt(n)
-
+// val randoms = for(i <- 1 until n) yield Random.nextInt(n)
 
 // Exercise 2
 
