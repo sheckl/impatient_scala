@@ -1,15 +1,20 @@
+import scala.util.Random
 
 // Exercise 1
 
-def randomArray (n: Int) = {
+def randomArray(n: Int) = {
   val a = new Array[Int](n)
-  for (i <- 0 until a.length) {
-    a(i) = util.Random.nextInt(n)
+  for (i <- 0 until n) {
+    a(i) = Random.nextInt(n)
   }
   a
 }
 
 println(randomArray(10).mkString(", "))
+
+// kürzere Variante:
+val randoms = for(i <- 1 until n) yield Random.nextInt(n)
+
 
 // Exercise 2
 
@@ -26,7 +31,12 @@ for (i <- 0 until (b.length,2)) {
 
 println(b.mkString(", "))
 
+// Exercise 3
 
 
 
+// Exercise 4
 
+val d = Array(2, 3, -5, 6, -8, 1)
+
+val indexes_positive = for (i <- 0 until d.length) yield
