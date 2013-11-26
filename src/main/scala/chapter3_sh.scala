@@ -38,4 +38,4 @@ println(b.mkString(", "))
 
 val d = Array(2, 3, -5, 6, -8, 1)
 
-val indexes_positive = for (i <- 0 until d.length) yield
+//val indexes_positive = for (i <- 0 until d.length) yield
