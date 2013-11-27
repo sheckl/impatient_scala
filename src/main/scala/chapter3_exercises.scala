@@ -142,8 +142,11 @@ val a = ArrayBuffer(3, 7, -4, 8, -2, 7, 3, -6)
 println(RemoveNegativeElements(a).mkString(", "))
 
 
+// Exercise 9
 
-
+val timezones = java.util.TimeZone.getAvailableIDs
+val timezonesAmerica = for (elem <- timezones if elem.startsWith("America")) yield elem.stripPrefix("America/")
+val timezonesAmericaSorted = timezonesAmerica.sorted
 
 
 
