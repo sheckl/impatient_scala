@@ -24,7 +24,7 @@ val b = Array(1, 2, 3, 4, 5)
 
 for (i <- 0 until b.length) {
   if (i % 2 == 0 & i < b.length - 1) {
-    var firstNumber = b(i)
+    val firstNumber = b(i)
     b(i) = b(i + 1)
     b(i + 1) = firstNumber
   }
