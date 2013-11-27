@@ -68,7 +68,14 @@ val fAverage = f.sum / f.length
 println(fAverage)
 
 
+// Exercise 6
 
+val g = Array(1, 2, 3, 4, 5)
+println(g.reverse.mkString(", "))
+println(g.sortWith(_ > _).mkString(", "))
+
+val h = ArrayBuffer(1, 2, 3, 4, 5)
+println(h.sortWith(_ > _).mkString(", "))
 
 
 
