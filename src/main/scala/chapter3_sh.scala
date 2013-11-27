@@ -61,6 +61,13 @@ val e = (positiveValues ++= negativeValues).toArray
 println(e.mkString(", "))
 
 
+// Exercise 5
+
+val f = Array(1, 2, 3, 4, 5)
+val fAverage = f.sum / f.length
+println(fAverage)
+
+
 
 
 
