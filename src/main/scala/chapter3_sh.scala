@@ -38,13 +38,35 @@ println(b.mkString(", "))
 
 val c = Array(1, 2, 3, 4, 5)
 
-val newArray = for (i <- 0 until c.length) yield {
+val newArray = (for (i <- 0 until c.length) yield {
   if (i % 2 == 0 & i == c.length - 1) c(i)
   else if (i % 2 == 0) c(i + 1)
   else c(i - 1)
-}
+}).toArray
 
 println(newArray.mkString(", "))
+
+
+// Exercise 4
+
+import scala.collection.mutable.ArrayBuffer
+
+val d = Array(2, 3, -5, 6, -8, 1)
+
+val positiveValues = (for (i <- 0 until d.length if d(i) > 0) yield d(i)).toBuffer
+val negativeValues = (for (i <- 0 until d.length if d(i) <= 0) yield d(i)).toArray
+
+val e = (positiveValues ++= negativeValues).toArray
+
+println(e.mkString(", "))
+
+
+
+
+
+
+
+
 
 
 
