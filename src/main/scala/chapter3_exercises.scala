@@ -50,9 +50,9 @@ val c = Array(1, 2, 3, 4, 5)
 println("new array created with yield: " + swapElementsYield(c).mkString(", "))
 
 // shorter version:
-val in = Array(1, 2, 3, 4, 5)
-val out = (for(a <- in.grouped(2)) yield a.reverse).flatten
-println(out.mkString("|"))
+// val in = Array(1, 2, 3, 4, 5)
+// val out = (for(a <- in.grouped(2)) yield a.reverse).flatten
+// println(out.mkString("|"))
 // in.grouped teilt das Array in 2er Gruppen ein, die dann jeweils durch reverse umgedreht werden
 // das ergibt eine Reihe von 2er Arrays, die durch flatten wieder zusammengebracht werden
 
@@ -73,9 +73,9 @@ val d = Array(1, -5, 9, -10, 2, 3)
 println("ordered array: " + orderArray(d).mkString(", "))
 
 // shorter version:
-val in = Array(1, 2, -3, 4, -5)
-val out = in.filter(_ > 0) ++ in.filter(_< 0)
-println(out.mkString("|"))
+// val in = Array(1, 2, -3, 4, -5)
+// val out = in.filter(_ > 0) ++ in.filter(_< 0)
+// println(out.mkString("|"))
 
 
 
@@ -106,9 +106,8 @@ println("array without duplicates: " + array.distinct.mkString(", "))
 
 import scala.collection.mutable.ArrayBuffer
 
-val a = ArrayBuffer(2, 3, 5, 7, 11)
-
 // first example 3.4
+/*
 var first = true
 var n = a.length
 var i = 0
@@ -119,15 +118,17 @@ while (i < n) {
     else { a.remove(i); n -= 1 }
   }
 }
+*/
 
 // second example 3.4
+/*
 var first = true
 val indexes = for (i <- 0 until a.length if first || a(i) >= 0) yield {
   if (a(i) < 0) first = false; i
 }
 for (j <- 0 until indexes.length) a(j) = a(indexes(j))
 a.trimEnd(a.length - indexes.length)
-
+*/
 
 // exercise version
 def RemoveNegativeElements(a: ArrayBuffer[Int]) = {
