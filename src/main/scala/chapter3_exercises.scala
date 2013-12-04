@@ -89,7 +89,6 @@ println(fAverage)
 // Exercise 6
 
 val g = Array(1, 2, 3, 4, 5)
-println(g.reverse.mkString(", "))
 println(g.sortWith(_ > _).mkString(", "))
 
 val h = ArrayBuffer(1, 2, 3, 4, 5)
@@ -118,6 +117,7 @@ while (i < n) {
     else { a.remove(i); n -= 1 }
   }
 }
+Hier wird jedes Element einzeln durchgegangen.
 */
 
 // second example 3.4
@@ -128,15 +128,21 @@ val indexes = for (i <- 0 until a.length if first || a(i) >= 0) yield {
 }
 for (j <- 0 until indexes.length) a(j) = a(indexes(j))
 a.trimEnd(a.length - indexes.length)
+Es werden erst die Indizes, die behalten werden sollen gespeichert,
+dann wird das Array danach sortiert und nur der hintere (negative) Teil gelöscht.
 */
 
 // exercise version
 def RemoveNegativeElements(a: ArrayBuffer[Int]) = {
   val IndexNegativeNumbers = for (i <- 0 until a.length if a(i) < 0) yield i
-  val IndexesToKeep = IndexNegativeNumbers.reverse.dropRight(1)
-  for (i <- IndexesToKeep) a.remove(i)
+  val IndexesToDrop = IndexNegativeNumbers.reverse.dropRight(1)
+  for (i <- IndexesToDrop) a.remove(i)
   a
 }
+/*
+Hier werden die Indizes gesammelt, die gelöscht werden sollen.
+Danach werden die entsprechenden Elemente gelöscht.
+*/
 
 val a = ArrayBuffer(3, 7, -4, 8, -2, 7, 3, -6)
 println(RemoveNegativeElements(a).mkString(", "))
