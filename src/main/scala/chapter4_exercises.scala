@@ -14,7 +14,7 @@ val firstFile = new java.util.Scanner(new java.io.File("myfile.txt"))
 
 def CountWordsInFile(file: java.util.Scanner) = {
   val countWords = scala.collection.mutable.Map[String, Int]()
-  while(file.hasNext()) {
+  while(file.hasNext) {
     val nextWord = file.next()
     //if (countWords.contains(nextWord)) countWords(nextWord) += 1 else countWords(nextWord) = 1
     countWords(nextWord) = countWords.getOrElse(nextWord, 0) + 1
@@ -31,7 +31,7 @@ val secondFile = new java.util.Scanner(new java.io.File("myfile.txt"))
 
 def CountWordsInFileImmutable(file: java.util.Scanner) = {
   var countWords = Map[String, Int]()
-  while(file.hasNext()) {
+  while(file.hasNext) {
     val nextWord = file.next()
     if (countWords.contains(nextWord)) {
       val newNumber = countWords(nextWord) + 1
@@ -51,7 +51,7 @@ println(CountWordsInFileImmutable(secondFile))
 val file = new java.util.Scanner(new java.io.File("myfile.txt"))
 
 var countWordsThree = scala.collection.immutable.SortedMap[String, Int]()
-while(file.hasNext()) {
+while(file.hasNext) {
   val nextWord = file.next()
   if (countWordsThree.contains(nextWord)) {
     val newNumber = countWordsThree(nextWord) + 1
