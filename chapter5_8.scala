@@ -9,3 +9,7 @@ val firstCar = new Car("Audi", "A8")
 val secondCar = new Car("Audi", "A8", 2013)
 val thirdCar = new Car("Audi", "A8", 2013, "M-AB-123")
 // val testCar = new Car()   => Unspecified value parameters manufacturer, modelName.
+
+// nur man und name oben rein
+// die anderen drei fälle über ein def this machen!
+
