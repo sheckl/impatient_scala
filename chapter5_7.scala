@@ -6,5 +6,6 @@ class Person(name: String) {
 val person = new Person("Fred Smith")
 println("This person is called " + person.firstName + " " + person.lastName + ".")
 
-// der zusammengesetzte Name (name) wird bei einem plain parameter als object-privat deklariert
+// der zusammengesetzte Name (name) wird bei einem plain parameter als object-privat deklariert,
+// weil er in einer Methode (split) verwendet wird
 // ist ok, weil er sonst nirgends erreichbar sein muss
