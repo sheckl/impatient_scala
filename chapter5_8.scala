@@ -1,15 +1,35 @@
 
-class Car(val manufacturer: String, val modelName: String, val modelYear: Int = -1, var licensePlate: String = "") {
-  println("manufacturer: " + manufacturer)
-  println("modelName: " + modelName)
-  println("modelYear: " + modelYear)
-  println("licensePlate: " + licensePlate)
-}
-val firstCar = new Car("Audi", "A8")
-val secondCar = new Car("Audi", "A8", 2013)
-val thirdCar = new Car("Audi", "A8", 2013, "M-AB-123")
-// val testCar = new Car()   => Unspecified value parameters manufacturer, modelName.
+class Car(val manufacturer: String, val modelName: String) {
+  private var currentModelYear: Int = -1
+  var licensePlate: String = ""
 
-// nur man und name oben rein
-// die anderen drei fälle über ein def this machen!
+  def this(manufacturer: String, modelName: String, currentModelYear: Int) {
+    this(manufacturer, modelName)
+    this.currentModelYear = currentModelYear
+  }
+
+  def this(manufacturer: String, modelName: String, licensePlate: String) {
+    this(manufacturer, modelName)
+    this.licensePlate = licensePlate
+  }
+
+  def this(manufacturer: String, modelName: String, currentModelYear: Int, licensePlate: String) {
+    this(manufacturer, modelName)
+    this.currentModelYear = currentModelYear
+    this.licensePlate = licensePlate
+  }
+
+  def modelYear = currentModelYear
+}
+
+
+val firstCar = new Car("Audi", "A8")
+println(firstCar.manufacturer + firstCar.modelName + firstCar.modelYear + firstCar.licensePlate)
+val secondCar = new Car("Audi", "A8", 2013)
+println(secondCar.manufacturer + secondCar.modelName + secondCar.modelYear + secondCar.licensePlate)
+val thirdCar = new Car("Audi", "A8", 2013, "M-AB-123")
+println(thirdCar.manufacturer + thirdCar.modelName + thirdCar.modelYear + thirdCar.licensePlate)
+thirdCar.licensePlate = "A-ABC-123"
+println(thirdCar.manufacturer + thirdCar.modelName + thirdCar.modelYear + thirdCar.licensePlate)
+// val testCar = new Car()   => Unspecified value parameters manufacturer, modelName.
 
