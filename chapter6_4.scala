@@ -1,11 +1,14 @@
 import java.awt.Point
 
-// Point(3, 4) without new: Point class with companion object
-
-class Point private (val xValue: Int, val yValue: Int) {}
+class Point private (val xValue: Int, val yValue: Int) {
+  private var x = xValue
+  private var y = yValue
+  def getCoordinates = (x, y)
+}
 
 object Point {
   def apply(xValue: Int, yValue: Int) = new Point(xValue, yValue)
 }
 
-Point(3, 4)
+val newPoint = Point(3, 4)
+println("Coordinates: " + newPoint.getCoordinates)
