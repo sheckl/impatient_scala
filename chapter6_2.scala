@@ -1,12 +1,23 @@
 
-abstract class UnitConversion(var conversionFactor: Double) {
-  def convert(unitToConvert: Double) = { unitToConvert * conversionFactor }
+abstract class UnitConversion {
+  def convert(unitToConvert: Double): Double
 }
 
-object inchesToCentimeters extends UnitConversion(2.54)
-object gallonsToLiters extends UnitConversion(4.404)
-object milesToKilometers extends UnitConversion(1.609)
+object InchesToCentimeters extends UnitConversion {
+  def convert(unitToConvert: Double) = unitToConvert * 2.54
+}
 
-println(inchesToCentimeters.convert(10))
-println(gallonsToLiters.convert(10))
-println(milesToKilometers.convert(10))
+object GallonsToLiters extends UnitConversion {
+  def convert(unitToConvert: Double) = unitToConvert * 4.404
+}
+
+object MilesToKilometers extends UnitConversion {
+  def convert(unitToConvert: Double) = unitToConvert * 1.609
+}
+
+println(InchesToCentimeters.convert(10))
+println(GallonsToLiters.convert(10))
+println(MilesToKilometers.convert(10))
+
+// override nicht notwendig, weil Methode nicht implementiert ist
+// abstract -> Methode nicht implementieren

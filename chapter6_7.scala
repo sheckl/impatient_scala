@@ -13,3 +13,4 @@ def isRed(cardSuit: cardSuits) = cardSuit == Karo || cardSuit == Herz
 
 for (c <- cardSuits.values) println(c + " is red: " + isRed(c))
 
+WeekDay.values filter isWorkingDay foreach println
