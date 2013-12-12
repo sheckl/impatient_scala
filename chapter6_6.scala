@@ -1,5 +1,6 @@
 
 object cardSuits extends Enumeration {
+  type cardSuits = Value
   val Kreuz = Value("♣")
   val Karo = Value("♦")
   val Herz = Value("♥")
