@@ -9,6 +9,7 @@ object cardSuits extends Enumeration {
 
 import cardSuits._
 
-def isRed(cardSuit: cardSuits) = (cardSuit == Karo || cardSuit == Herz)
+def isRed(cardSuit: cardSuits) = cardSuit == Karo || cardSuit == Herz
 
 for (c <- cardSuits.values) println(c + " is red: " + isRed(c))
+
