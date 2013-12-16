@@ -1,16 +1,18 @@
 
-object cardSuits extends Enumeration {
-  type cardSuits = Value
+object CardSuits extends Enumeration {
   val Kreuz = Value("♣")
   val Karo = Value("♦")
   val Herz = Value("♥")
   val Pik = Value("♠")
 }
 
-import cardSuits._
+import CardSuits._
 
-def isRed(cardSuit: cardSuits) = cardSuit == Karo || cardSuit == Herz
+def isRed(cardSuit: CardSuits.Value) = {
+  cardSuit == Karo || cardSuit == Herz
+}
 
-for (c <- cardSuits.values) println(c + " is red: " + isRed(c))
+for (c <- CardSuits.values) println(c + " is red: " + isRed(c))
 
-WeekDay.values filter isWorkingDay foreach println
+// Statt CardSuits.Value könnte auch type CardSuits=Value geschrieben werden
+// wir machen das aber erstmal nicht

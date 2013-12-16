@@ -1,9 +1,6 @@
-import java.awt.Point
 
 class Point private (val xValue: Int, val yValue: Int) {
-  private var x = xValue
-  private var y = yValue
-  def getCoordinates = (x, y)
+  def getCoordinates = (xValue, yValue)
 }
 
 object Point {
