@@ -14,3 +14,5 @@ if (password == "secret") {
 
 // println Kurzschreibweise für System.out.println(...)
 // Fehlerstream: System.err.println(...)
+//
+
