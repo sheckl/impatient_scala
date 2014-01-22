@@ -1,9 +1,7 @@
 
 class Point(val x: Int, val y: Int)
 
-class LabeledPoint(val label: String, x: Int, y: Int) extends Point(x, y)  {
-  def pointLabel = label
-}
+class LabeledPoint(val label: String, x: Int, y: Int) extends Point(x, y)
 
 val a = new Point(1, 1)
 println(a.x, a.y)

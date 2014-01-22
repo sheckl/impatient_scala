@@ -8,7 +8,7 @@ class BankAccount(initialBalance: Double) {
 
 class CheckedAccount(initialBalance: Double) extends BankAccount(initialBalance) {
   override def deposit(amount: Double) = super.deposit(amount - 1.0)
-  override def withdraw(amount: Double) = super.withdraw (amount + 1.0)
+  override def withdraw(amount: Double) = super.withdraw(amount + 1.0)
 }
 
 val b = new BankAccount(1000.0)

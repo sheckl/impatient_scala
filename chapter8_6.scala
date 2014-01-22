@@ -6,7 +6,7 @@ abstract class Shape {
 }
 
 class Rectangle(val topLeft: Point, val bottomRight: Point) extends Shape {
-  override val centerPoint = new Point( (bottomRight.x - topLeft.x)/2, (topLeft.y - bottomRight.y)/2 )
+  override val centerPoint = new Point( (bottomRight.x - topLeft.x) / 2, (topLeft.y - bottomRight.y) / 2 )
 }
 
 class Circle(override val centerPoint: Point, val radius: Int) extends Shape
