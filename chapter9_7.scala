@@ -4,12 +4,6 @@ val tokens = source.mkString.split("\\s+")
 
 println("kompletter Text:")
 println(tokens.mkString(" "))
+
 println("Wörter, die keine Zahlen sind:")
-
-for (elem <- tokens) {
-  if (elem.matches("[-+]?[0-9]*\\.?[0-9]+")) {
-
-  } else {
-    println(elem)
-  }
-}
+tokens.filterNot(_.matches("[-+]?[0-9]*\\.?[0-9]+")).foreach(println)

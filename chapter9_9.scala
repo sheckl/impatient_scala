@@ -1,11 +1,18 @@
-
 import java.io.File
 
-def subdirs(dir: File): Iterator[File] = {
-  val children = dir.listFiles.filter(_.isDirectory)
-  children.toIterator ++ children.toIterator.flatMap(subdirs _)
+def foo(dir: File) {
+  for(child <- dir.listFiles) {
+    if (child.isFile) {
+      if (child.getName.matches("""[a-z0-9_]+.scala""")) {
+        println(child.getAbsolutePath)
+      }
+    }  else {
+      foo(child)
+    }
+  }
+
 }
 
-for (d <- subdirs(dir)) {
+foo(new File("."))
 
-}
+//hier bietet sich "refactor -> extract -> method" an (-> Mail von Oli)

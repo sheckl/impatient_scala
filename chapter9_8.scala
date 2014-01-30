@@ -1,5 +1,5 @@
 
-val html = io.Source.fromURL("http://horstmann.com", "UTF-8").mkString
+val html = io.Source.fromURL("http://www.helpster.de", "UTF-8").mkString
 
 val regEx = """<img[^>]*src="([^"]*)"[^>]*>""".r
 
