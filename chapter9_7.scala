@@ -1,19 +1,15 @@
 
 val source = scala.io.Source.fromFile("myfile9_7.txt")
-val tokens = source.mkString
+val tokens = source.mkString.split("\\s+")
 
 println("kompletter Text:")
-println(tokens)
+println(tokens.mkString(" "))
+println("Wörter, die keine Zahlen sind:")
 
-//val floatPointPattern = """[-+]?[0-9]*\.?[0-9]+""".r
-val floatPointPattern = """[^0-9.]*""".r
-val matches = floatPointPattern.findAllIn(tokens).toArray
+for (elem <- tokens) {
+  if (elem.matches("[-+]?[0-9]*\\.?[0-9]+")) {
 
-println("Text ohne Zahlen:")
-println(matches.mkString(" "))
-
-/*
-val out = new java.io.PrintWriter("myfile9_7_b.txt")
-out.println(matches.mkString(" "))
-out.close()
-*/
+  } else {
+    println(elem)
+  }
+}
