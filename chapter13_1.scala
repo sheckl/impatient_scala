@@ -13,3 +13,5 @@ def indexes(word: String) = {
 }
 
 println(indexes("Mississippi"))
+
+//Reihenfolge ist noch falsch
