@@ -1,7 +1,7 @@
 import scala.collection.mutable
 
 def indexes(word: String) = {
-  val result = Map[Char, mutable.LinkedHashSet[Int]]()
+  var result = scala.collection.mutable.Map[Char, mutable.LinkedHashSet[Int]]()
 
   for ((letter, index) <- word.zipWithIndex) {
     val set = result.getOrElse(letter.toChar,new mutable.LinkedHashSet[Int])
@@ -13,5 +13,3 @@ def indexes(word: String) = {
 }
 
 println(indexes("Mississippi"))
-
-//Reihenfolge ist noch falsch

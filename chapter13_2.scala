@@ -1,17 +1,15 @@
-//wie 13_1, nur mit immutable map (Char -> List)
 
-
-def indexes(word: String) = {
-  val result = Map[Char, List[Int]]()
+def indexes2(word: String) = {
+  var result = scala.collection.immutable.Map[Char, scala.collection.mutable.LinkedList[Int]]()
 
   for ((letter, index) <- word.zipWithIndex) {
-    val set = result.getOrElse(letter.toChar, new List[Int])
-    set :: index
-    result(letter) = set
+    val set = result.getOrElse(letter.toChar, scala.collection.mutable.LinkedList[Int]())
+    set :+ index
+    result = result + (letter -> set)
   }
 
   result
 }
 
-println(indexes("Mississippi"))
+println(indexes2("Mississippi"))
 

@@ -9,3 +9,4 @@ def mult = {
 }
 
 println((prices zip quantities) map mult.tupled)
+println((prices.zip(quantities)).map(mult.tupled))
